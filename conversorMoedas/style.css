@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sora', sans-serif;
+}
+
+:root {
+    --bg-color: #212121;
+    --art-color: #F5F7F8;
+    --tlt-color: #f2f2f2;
+    --ipt-color: #DD5353;
+    --shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-image: url(img/Background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    padding: 5rem 0 0 0;
+}
+
+header {
+    position: absolute;
+    top: 7%;
+    text-align: center;
+
+        
+    animation: fadeIn 2s;
+}
+
+header .logo {
+    width: 16rem;
+    margin: 0 0 2rem 0;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+}
+
+section {
+    background-color: var(--art-color);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+    height: 500px;
+    width: 450px;
+    padding: 4rem 3rem 3rem 3rem;
+    border-radius: 2rem;
+}
+
+article:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: .8rem;
+    width: 100%;
+}
+
+article:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: .8rem;
+    width: 100%;
+}
+
+.title {
+    color: var(--ipt-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.inputDolar {
+    background-color: transparent;
+    box-shadow: var(--shadow);
+    width: 100%;
+    height: 70px;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.inputReal {
+    background-color: transparent;
+    box-shadow: var(--shadow);
+    width: 100%;
+    height: 70px;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.inputReal::placeholder ,
+.inputDolar::placeholder {
+    opacity: .5;
+}
+
+button {
+    background-color: var(--bg-color);
+    color: var(--art-color);
+    position: absolute;
+    bottom: 4rem;
+    border: none;
+    outline: none;
+    height: 4.3rem;
+    width: 10rem;
+    padding: 0 0 0 1.4rem;
+    border-radius: 1rem 0 0 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 2;
+    text-align: start;
+}
+
+p {
+    border: 4px solid var(--bg-color);
+    color: var(--bg-color);
+    position: absolute;
+    bottom: 4rem;
+    right: 3rem;
+    opacity: .8;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 4.3rem;
+    width: 12rem;
+    border-radius: 0 1rem 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    z-index: 3;
+    text-align: center;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

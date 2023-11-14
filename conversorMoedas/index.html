@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Conversor de Moedas</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    </head>
+    <body>
+
+        <main>
+
+            <header>
+                <a href="https://imersao.dev/" target="_blank">
+                    <img src="img/logo-imersao-aluraflix.svg"
+                        alt="imersão dev alura" 
+                        title="imersão dev alura"
+                        class="logo">
+                </a>
+            </header>
+    
+            <section>
+    
+                <article>
+                    <label for="valorDolar" class="title">Quantia em Dólar:</label>
+                    <input type="number" id="valorDolar"
+                        placeholder="Digite a quantia em dólar" class="inputDolar">
+                </article>
+    
+                <article>
+                    <label for="cotacao" class="title">Cotação do Dólar (atual):</label>
+                    <input type="number" id="cotacao"
+                        placeholder="Digite a cotação do dólar" class="inputReal">
+                </article>
+    
+                <button onclick="converter()">Converter <i class="ph-bold ph-swap"></i></button>
+    
+                <p id="resultado"></p>
+    
+            </section>
+    
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
