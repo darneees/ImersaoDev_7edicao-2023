@@ -1,4 +1,4 @@
-# ImersaoDev_7-_edi-o-2023
+# ImersaoDev_7º_edicao-2023
 
 ![Wallpaper Desktop](https://github.com/darneees/ImersaoDev_7-_edi-o-2023/assets/79709843/fe8738d1-ec30-466d-9cbf-f6b8246c744c)
 
