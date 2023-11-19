@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AluraFlix</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/transition-style">
+</head>
+<body>
+
+    <main>
+        <h1>
+            AluraFlix 
+            <a href="https://imersao.dev/" target="_blank">
+                <img src="img/logoAlura.jpg" alt="Imersão dev da Alura" title="Imersão dev da Alura" id="logo">
+            </a>
+        </h1>
+
+        <section class="movie">
+
+            <article id="rafa-container" class="animate__animated animate__fadeIn animate__delay-1.5s">
+                <p><span>#</span>1</p>
+            </article>
+
+            <article id="paulo-container" class="animate__animated animate__fadeIn animate__delay-1s">
+                <p><span>#</span>2</p>
+            </article>
+
+            <article id="gui-container" class="animate__animated animate__fadeIn animate__delay-2s">
+                <p><span>#</span>3</p>
+            </article>
+
+            <article id="doug-container" class="animate__animated animate__fadeIn animate__delay-3s">
+                <p><span>#</span>4</p>
+            </article>
+
+            <article id="pc-container" class="animate__animated animate__fadeIn animate__delay-4s">
+                <p><span>#</span>5</p>
+            </article>
+        </section>
+
+        <span class="top"></span>
+        <span class="left"></span>
+        <span class="right"></span>
+    </main>
+
+    <script>
+        var filmeRafa = 'https://i.pinimg.com/564x/39/68/fe/3968fe1d93305d5c6c9b6219f4639d3a.jpg';
+        var filmePaulo = 'https://i.pinimg.com/564x/52/19/b9/5219b9fe3874fcf4814adc9cf4c7c71b.jpg';
+        var filmeGui = 'https://i.pinimg.com/564x/d3/ab/87/d3ab877c8228af7397b107911a6a1911.jpg';
+        var filmeDoug = 'https://i.pinimg.com/564x/63/32/90/63329017bb1127c0e26cd6cc259a84e2.jpg';
+        var filmePc = 'https://i.pinimg.com/564x/29/f4/f5/29f4f5b36505b5adcfe38ee8aa9426ed.jpg';
+
+        function addImage(src, containerId) {
+            var container = document.getElementById(containerId);
+            var imagem = document.createElement('img');
+            imagem.src = src;
+            container.appendChild(imagem);
+        }
+
+        addImage(filmeRafa, 'rafa-container');
+        addImage(filmePaulo, 'paulo-container');
+        addImage(filmeGui, 'gui-container');
+        addImage(filmeDoug, 'doug-container');
+        addImage(filmePc, 'pc-container'); 
+
+    </script>
+    
+</body>
+</html>
