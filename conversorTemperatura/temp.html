@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    </head>
+    <body>
+        <main>
+
+            <button onclick="celsiusForm()" class="open">
+                <i class="ph-bold ph-number-one"></i>
+            </button>
+
+            <button onclick="fahnForm()" class="open2">
+                <i class="ph-bold ph-number-two"></i>
+            </button>
+
+            <section id="tempOne">
+
+                <label for="Celsius" class="title">
+                    Conversor
+                </label>
+
+                <span>
+                    Celsius
+                    <lord-icon
+                        src="https://cdn.lordicon.com/swcqkzdc.json"
+                        trigger="loop"
+                        delay="1200"
+                        colors="primary:#2f58cd">
+                    </lord-icon>
+                    Kelvin
+                </span>
+
+                <input type="number" id="Celsius"
+                    placeholder="Digite a temperatura">
+
+                <button onclick="converte()" class="convert">Converter</button>
+
+                <p id="result"></p>
+            </section>
+
+            <section id="tempTwo">
+
+                <label for="Fahrenheit" class="title">
+                    Conversor
+                </label>
+
+                <span>
+                    Celsius
+                    <lord-icon
+                        src="https://cdn.lordicon.com/swcqkzdc.json"
+                        trigger="loop"
+                        delay="1200"
+                        colors="primary:#2f58cd">
+                    </lord-icon>
+                    Fahrenheit
+                </span>
+
+                <input type="number" id="Fahrenheit"
+                    placeholder="Digite a temperatura">
+
+                <button onclick="converte2()" class="convert">Converter</button>
+
+                <p id="result"></p>
+            </section>
+
+            <span class="filter"></span>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
