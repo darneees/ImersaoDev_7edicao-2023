@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@200;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sora", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  padding: 5% 2% 2% 2%;
+  gap: 2rem;
+  overflow-x: hidden;
+}
+main .blur {
+  background: rgba(28, 28, 28, 0.3529411765);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+main #filmsList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+main img {
+  max-height: 400px;
+  margin: 1rem;
+  cursor: pointer;
+  border: 10px solid #a8a8a8;
+  transition: transform 0.3s;
+}
+main img:hover {
+  transform: scale(1.1);
+}
+main video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+main .content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(165, 165, 165, 0.078);
+  position: relative;
+  width: 50rem;
+  min-height: 13rem;
+  gap: 1rem;
+  border-radius: 2rem;
+  z-index: 3;
+  padding: 0 2rem;
+}
+main .content .ph-info {
+  background-color: #068fff;
+  color: #F2F2F2;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  z-index: 3;
+  animation: pulse 1.5s infinite;
+}
+main .content #modal {
+  background-color: #068fff;
+  position: absolute;
+  display: none;
+  top: 1rem;
+  left: 0.9rem;
+  z-index: 4;
+  height: 19rem;
+  width: 35rem;
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+}
+main .content #modal .contentBox {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 2rem;
+  gap: 1rem;
+}
+main .content #modal .contentBox h2 {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  color: #F2F2F2;
+}
+main .content #modal .contentBox p {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  color: #F2F2F2;
+  margin: 1rem 0;
+  gap: 0.5rem;
+}
+main .content #modal .contentBox p span {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #0C134F;
+}
+main .content #modal .contentBox p i {
+  color: #0C134F;
+  font-size: 1.5rem;
+  margin: 0 0.5rem 0 0;
+}
+main .content #modal .ph-x-circle {
+  color: #0C134F;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2.7rem;
+  cursor: pointer;
+}
+main .content #modal .ph-x-circle:hover {
+  color: #a8a8a8;
+}
+main .content h3 {
+  color: #F2F2F2;
+  font-size: 2rem;
+  z-index: 2;
+  text-align: center;
+}
+main .content #logo {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  width: 4rem;
+  border: none;
+  border-radius: 0 2rem 0 0;
+}
+main .content .addMovie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+main .content .addMovie input[type=text] {
+  width: 70%;
+  height: 4rem;
+  color: #068fff;
+  border-radius: 1rem;
+  border: none;
+  padding: 0 2rem 0 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  outline: none;
+}
+main .content .addMovie input[type=text]::-moz-placeholder {
+  color: #a8a8a8;
+}
+main .content .addMovie input[type=text]::placeholder {
+  color: #a8a8a8;
+}
+main .content .addMovie button {
+  background: #068fff;
+  color: #F2F2F2;
+  border: none;
+  width: 30%;
+  height: 4rem;
+  border-radius: 1rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+main .content .addMovie button:hover {
+  background: #a8a8a8;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media (min-width: 2000px) {
+  main .content {
+    max-width: 97%;
+    min-height: 15rem;
+  }
+  main .content h3 {
+    font-size: 2.3rem;
+  }
+  main .content .addMovie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+  }
+  main .content .addMovie input[type=text] {
+    width: 75%;
+  }
+  main .content .addMovie button {
+    width: 25%;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1999px) {
+  main .content {
+    max-width: 97%;
+    min-height: 15rem;
+  }
+  main .content h3 {
+    font-size: 2.3rem;
+  }
+  main .content .addMovie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+  }
+  main .content .addMovie input[type=text] {
+    width: 75%;
+  }
+  main .content .addMovie button {
+    width: 25%;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 700px) and (max-width: 999px) {
+  main .content {
+    max-width: 97%;
+    min-height: 13rem;
+  }
+  main .content h3 {
+    font-size: 2rem;
+  }
+  main .content #modal {
+    width: 99%;
+    height: 18rem;
+    top: 0;
+    left: 0.2rem;
+  }
+  main .content .addMovie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+  }
+  main .content .addMovie input[type=text] {
+    width: 75%;
+  }
+  main .content .addMovie button {
+    width: 25%;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 430px) and (max-width: 699px) {
+  main .content {
+    max-width: 97%;
+    min-height: 18rem;
+  }
+  main .content h3 {
+    font-size: 1.7rem;
+  }
+  main .content #modal {
+    width: 99%;
+    height: 20rem;
+    top: 0;
+    left: 0.2rem;
+  }
+  main .content .addMovie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+  main .content .addMovie input[type=text] {
+    width: 100%;
+  }
+  main .content .addMovie button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 429px) {
+  main .content {
+    max-width: 97%;
+    min-height: 18rem;
+  }
+  main .content h3 {
+    font-size: 1.5rem;
+    width: 80%;
+  }
+  main .content #modal {
+    width: 99%;
+    height: 25rem;
+    top: 0;
+    left: 0.2rem;
+  }
+  main .content .addMovie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+  main .content .addMovie input[type=text] {
+    width: 100%;
+  }
+  main .content .addMovie button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,386 @@
+@import '_variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@200;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sora', sans-serif;
+    user-select: none
+}
+
+main {
+    @include align (flex-start, center, column);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    padding: 5% 2% 2% 2%;
+    gap: 2rem;
+    overflow-x: hidden;
+
+    .blur {
+        background: $color-primary;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        backdrop-filter: blur(20px);
+    }
+
+    #filmsList {
+        @include align (center, center, row);
+        z-index: 2;
+        flex-wrap: wrap;
+    }
+
+    img {
+        max-height: 400px;
+        margin: 1rem;
+        cursor: pointer;
+        border: 10px solid $color-quaternary;
+
+        transition: transform .3s;
+
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-size: cover;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .content {
+        @include align (space-evenly, center, column);
+        background: $bg-content;
+        position: relative;
+        width: 50rem;
+        min-height: 13rem;
+        gap: 1rem;
+        border-radius: 2rem;
+        z-index: 3;
+        padding: 0 2rem;
+
+        .ph-info {
+            background-color: $color-tertiary;
+            color: $color-secondary;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: .3rem;
+            border-radius: 1rem;
+            cursor: pointer;
+            z-index: 3;
+            
+            animation: pulse 1.5s infinite;
+        }
+
+        #modal {
+            background-color: $color-tertiary;
+            position: absolute;
+            display: none;
+            top: 1rem;
+            left: .9rem;
+            z-index: 4;
+            height: 19rem;
+            width: 35rem;
+            border-radius: 2rem;
+            transition: all 0.3s ease;
+
+            .contentBox {
+                @include align (center, flex-start, column);
+                width: 100%;
+                height: 100%;
+                padding: 1rem 2rem;
+                gap: 1rem;
+
+                h2 {
+                    text-transform: uppercase;
+                    font-size: 1.3rem;
+                    color: $color-secondary;
+                }
+
+                p {
+                    @include align (flex-start, center, row);
+                    color: $color-secondary;
+                    margin: 1rem 0;
+                    gap: .5rem;
+
+                    span {
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        color: $color-sixtinary;
+                    }
+
+                    i {
+                        color: $color-sixtinary;
+                        font-size: 1.5rem;
+                        margin: 0 .5rem 0 0;
+                    }
+                }
+            }
+
+            .ph-x-circle {
+                color: $color-sixtinary;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                font-size: 2.7rem;
+                cursor: pointer;
+
+                &:hover {
+                    color: $color-quaternary;
+                }
+            }
+        }
+
+        h3 {
+            color: $color-secondary;
+            font-size: 2rem;
+            z-index: 2;
+            text-align: center
+        }
+
+        #logo {
+            position: absolute;
+            top: -1rem;
+            right: -1rem;
+            width: 4rem;
+            border: none;
+            border-radius: 0 2rem 0 0;
+        }
+
+        .addMovie {
+            @include align (center, center, row);
+            gap: 1rem;
+
+            input[type="text"] {
+                width: 70%;
+                height: 4rem;
+                color: $color-tertiary;
+                border-radius: 1rem;
+                border: none;
+                padding: 0 2rem 0 2rem;
+                font-size: 1rem;
+                font-weight: 400;
+                outline: none;
+            }
+
+            input[type="text"]::placeholder {
+                color: $color-quaternary;
+            }
+
+            button {
+                background: $color-tertiary;
+                color: $color-secondary;
+                border: none;
+                width: 30%;
+                height: 4rem;
+                border-radius: 1rem;
+                font-weight: 400;
+                font-size: 1.2rem;
+                cursor: pointer;
+                transition: .3s;
+
+                &:hover {
+                    background: $color-quaternary;
+                }
+            }
+        }
+    }
+}
+
+// animation
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (min-width: 2000px) {
+
+    main {
+        .content {
+            max-width: 97%;
+            min-height: 15rem;
+
+            h3 {
+                font-size: 2.3rem;
+            }
+    
+            .addMovie {
+                @include align (center, center, row);
+                width: 100%;
+                gap: 1rem;
+    
+                input[type="text"] {
+                    width: 75%;
+                }
+    
+                button {
+                    width: 25%;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1999px) {
+
+    main {
+        .content {
+            max-width: 97%;
+            min-height: 15rem;
+
+            h3 {
+                font-size: 2.3rem;
+            }
+    
+            .addMovie {
+                @include align (center, center, row);
+                width: 100%;
+                gap: 1rem;
+    
+                input[type="text"] {
+                    width: 75%;
+                }
+    
+                button {
+                    width: 25%;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 700px) and (max-width: 999px) {
+
+    main {
+        .content {
+            max-width: 97%;
+            min-height: 13rem;
+
+            h3 {
+                font-size: 2rem;
+            }
+
+            #modal {
+                width: 99%;
+                height: 18rem;
+                top: 0;
+                left: .2rem;
+            }
+    
+            .addMovie {
+                @include align (center, center, row);
+                width: 100%;
+                gap: 1rem;
+    
+                input[type="text"] {
+                    width: 75%;
+                }
+    
+                button {
+                    width: 25%;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 430px) and (max-width: 699px) {
+
+    main {
+        .content {
+            max-width: 97%;
+            min-height: 18rem;
+
+            h3 {
+                font-size: 1.7rem;
+            }
+
+            #modal {
+                width: 99%;
+                height: 20rem;
+                top: 0;
+                left: .2rem;
+            }
+    
+            .addMovie {
+                @include align (center, center, column);
+                width: 100%;
+                gap: 1rem;
+    
+                input[type="text"] {
+                    width: 100%;
+                }
+    
+                button {
+                    width: 100%;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 429px) {
+
+    main {
+        .content {
+            max-width: 97%;
+            min-height: 18rem;
+
+            h3 {
+                font-size: 1.5rem;
+                width: 80%;
+            }
+
+            #modal {
+                width: 99%;
+                height: 25rem;
+                top: 0;
+                left: .2rem;
+            }
+    
+            .addMovie {
+                @include align (center, center, column);
+                width: 100%;
+                gap: 1rem;
+    
+                input[type="text"] {
+                    width: 100%;
+                }
+    
+                button {
+                    width: 100%;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

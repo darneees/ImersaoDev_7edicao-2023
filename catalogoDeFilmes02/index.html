@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Movie Frame</title>
+        <link rel="stylesheet" href="resource/style.css">
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    </head>
+    <body>
+
+        <main>
+            <section class="content">
+                <i class="ph-bold ph-info" onclick="openBox()" id="open"></i>
+
+                <section id="modal">
+                    <article class="contentBox">
+                        <h2>Como pegar o endereço de uma imagem?</h2>
+                        <div>
+                            <p><i class="ph-bold ph-number-circle-one"></i>
+                                Pesquise o filme no google.</p>
+                            <p><i class="ph-bold ph-number-circle-two"></i>
+                                clique com o botão direito na imagem ( ou segure
+                                por alguns segundos, caso esteja no celular ).</p>
+                            <p><i class="ph-bold ph-number-circle-three"></i>
+                                Copie o Endereço da imagem.</p>
+                        </div>
+                    </article>
+                    <i class="ph-bold ph-x-circle" id="close"></i>
+                </section>
+
+                <h3 class="page-subtitle">
+                    Qual seu filme favorito?
+                </h3>
+
+                <article class="addMovie">
+                    <input type="text" id="filme" name="filme"
+                        placeholder="Insira o endereço de imagem"
+                        autocomplete="off">
+                    <button onClick="addfilm()">Adicionar</button>
+                </article>
+
+                <a href="https://imersao.dev/" target="_blank">
+                    <img src="resource/media/logoAlura.jpg"
+                        alt="Imersão dev da Alura" title="Imersão dev da Alura"
+                        id="logo">
+                </a>
+            </section>
+
+            <div id="filmsList"></div>
+
+            <span class="blur"></span>
+            <video src="resource/media/tv_-_16880 (720p).mp4" loop autoplay></video>
+        </main>
+
+        <script src="resource/script.js"></script>
+    </body>
+</html>

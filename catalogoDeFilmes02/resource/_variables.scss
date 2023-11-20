@@ -1,0 +1,15 @@
+@mixin align ($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+// COLORS
+
+$color-primary: #1c1c1c5a;
+$color-secondary: #F2F2F2;
+$color-tertiary: #068fff;
+$color-quaternary: #a8a8a8;
+$color-sixtinary: #0C134F;
+$bg-content: rgba(165, 165, 165, 0.078);
