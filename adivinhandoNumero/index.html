@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Secret number</title>
+        <style>
+            body {
+                background: #343434;
+            }
+        </style>
+    </head>
+    <body>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut, laudantium ea maxime facere ullam reprehenderit itaque nulla neque tempore laborum dolores fuga officia error, a corporis quis eveniet, obcaecati eius.</p>
+
+        <script>
+        var numeroSecreto = parseInt(Math.random() * 501);
+
+        while(chute != numeroSecreto) {
+            var chute = prompt("Digite um número entre 1 e 500");
+
+            if ( chute == numeroSecreto) {
+                alert("Parabens você acertou!");
+            } else if ( chute > numeroSecreto) {
+                alert("Infelizmente você errou! O numero secreto é menor.");
+            } else if ( chute < numeroSecreto) {
+                alert("Infelizmente você errou! O numero secreto é maior.")
+            }
+        }
+        </script>
+    </body>
+</html>
